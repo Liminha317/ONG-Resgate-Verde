@@ -1,0 +1,265 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #a9c5a5;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #2b5d34;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
+nav a:hover { text-decoration: underline; }
+main { padding: 20px; }
+footer { text-align: center; padding: 15px; background-color: #044604; color: white; }
+.carrossel img {
+  width: 25%;             /* Usa toda a largura da seção */
+  max-width: 900px;        /* Limita para não ficar exagerada em telas grandes */
+  height: auto;            /* Mantém proporção natural */
+  display: block;          /* Remove espaços extras */
+  margin: 0px auto;       /* Centraliza horizontalmente */
+  border-radius: 12px;     /* Bordas arredondadas */
+  object-fit: cover;       /* Corta o excesso mantendo proporção */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Efeito de sombra */
+}
+
+.imagem-detalhe { margin: 20px 0; text-align: center; }
+.imagem-detalhe img { width: 25%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+.imagem-detalhe p { font-size: 1.1em; color: #444; margin-top: 10px; }
+.formulario { display: flex; flex-direction: column; max-width: 400px; margin: auto; gap: 10px; }
+input, textarea { padding: 8px; border: 1px solid #ccc; border-radius: 5px; }
+button { background-color: #2b5d34; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+button:hover { background-color: #387f47; }
+
+button {
+  background-color: #2b5d34;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #387f47;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.2em;
+  }
+
+  nav a {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .carrossel img {
+    max-width: 25%;
+    height: auto;
+  }
+
+  main {
+    padding: 10px;
+  }
+}
+
+#mensagem {
+  background-color: #e6f4ea;
+  border: 1px solid #4caf50;
+  color: #2e7d32;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.dark { background: #333; color: #fff; } .light { background: #fff; color: #000; }
+
+body {
+  background-color: #a7bd8b; 
+}
+
+.menu-toggle {
+  display: none; /* Escondido por padrão (desktop) */
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px; /* Mantém o espaçamento original */
+}
+
+nav ul.mobile-hidden {
+  display: none; /* Esconde o menu em mobile por padrão */
+}
+
+nav ul.mobile-visible {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #2b5d34; /* Mantém a cor do header */
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito de sumiço no header ao rolar para baixo */
+header.header-hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+header.header-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Responsividade para hambúrguer (mantém o @media original e adiciona) */
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: flex; /* Mostra hambúrguer em mobile */
+  }
+  nav ul {
+    display: none; /* Esconde menu padrão em mobile */
+  }
+  nav ul.mobile-visible {
+    display: flex; /* Mostra quando ativado */
+  }
+}
+
+/* Estilos para as janelas das imagens em projetos.html */
+.window {
+  background-color: #fff; /* Fundo branco para destacar como "janela" */
+  border: 2px solid #2b5d34; /* Borda verde sutil */
+  border-radius: 12px; /* Bordas arredondadas, como nas imagens originais */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra leve para efeito de profundidade */
+  padding: 20px; /* Espaçamento interno para acomodar textos e botões */
+  margin: 10px; /* Margem reduzida para caber na linha */
+  text-align: center; /* Centraliza conteúdo */
+  flex: 1; /* Permite que as janelas se ajustem na linha */
+  min-width: 200px; /* Largura mínima para evitar compressão excessiva */
+  max-width: 300px; /* Largura máxima para manter proporção */
+}
+
+.window img {
+  width: 100%; /* Ajusta para caber na janela (em vez de 25% fixo) */
+  max-width: 250px; /* Limita para não ficar grande demais */
+  border-radius: 10px; /* Bordas arredondadas originais */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra original */
+  margin-bottom: 10px; /* Espaço entre imagem e texto */
+}
+
+.window p {
+  font-size: 1.1em; /* Mantém tamanho do texto original */
+  color: #444; /* Cor original */
+  margin: 10px 0; /* Espaço ajustado */
+  line-height: 1.4; /* Melhora legibilidade dos textos longos */
+}
+
+.windows-row {
+  display: flex; /* Organiza as 4 primeiras em linha */
+  justify-content: space-around; /* Espaça uniformemente */
+  flex-wrap: wrap; /* Quebra linha se necessário em telas pequenas */
+  margin: 20px 0; /* Espaço vertical */
+}
+
+.windows-single {
+  display: flex; /* Centraliza a quinta imagem */
+  justify-content: center; /* Alinha no centro */
+  margin: 20px 0; /* Espaço vertical */
+}
+
+/* Estilo para o botão "Seja Voluntário" */
+.btn-voluntario {
+  background-color: #2b5d34; /* Verde do site */
+  color: white;
+  padding: 10px 20px; /* Tamanho similar aos botões originais */
+  border: none;
+  border-radius: 5px; /* Bordas arredondadas originais */
+  cursor: pointer;
+  text-decoration: none; /* Remove sublinhado do link */
+  font-weight: bold;
+  display: inline-block; /* Comporta como botão */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transições originais */
+  margin-top: 10px; /* Espaço acima do botão */
+}
+
+.btn-voluntario:hover {
+  background-color: #387f47; /* Hover verde mais claro, como nos botões originais */
+  transform: scale(1.05); /* Efeito de escala original */
+}
+
+/* Responsividade para as janelas */
+@media (max-width: 600px) {
+  .windows-row {
+    flex-direction: column; /* Empilha as 4 imagens em coluna em mobile */
+    align-items: center; /* Centraliza */
+  }
+  .window {
+    max-width: 90%; /* Ajusta largura em telas pequenas */
+    margin: 10px 0; /* Reduz margem */
+  }
+}
+
+.intro-section, .final-section {
+  background-color: rgba(43, 93, 52, 0.1); 
+  padding: 20px; 
+  border-radius: 8px; 
+  margin: 20px 0; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+@media (max-width: 600px) {
+  .intro-section, .final-section {
+    padding: 15px; 
+    margin: 15px 0; 
+  }
+}
